@@ -23,7 +23,7 @@ dataframe_all = dataframe_all[counter_without_nan.keys()]
 dataframe_all = dataframe_all.ix[:,7:]
 # the list of columns (the last column is the class label)
 columns = dataframe_all.columns
-print columns
+print(columns)
 
 # step 3: get features (x) and scale the features
 # get x and convert it to numpy array
@@ -31,7 +31,7 @@ x = dataframe_all.ix[:,:-1].values
 standard_scaler = StandardScaler()
 x_std = standard_scaler.fit_transform(x)
 
-# step 4: get class labels y and then encode it into number 
+# step 4: get class labels y and then encode it into number
 # get class label data
 y = dataframe_all.ix[:,-1].values
 # encode the class label
@@ -59,8 +59,3 @@ plt.ylabel('Y in t-SNE')
 plt.legend(loc='upper left')
 plt.title('t-SNE visualization of test data')
 plt.show()
-
-
-
-
-
